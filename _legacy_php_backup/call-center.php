@@ -84,7 +84,7 @@ window.addEventListener('load', function() {
             preloader.classList.add('loaded'); 
             setTimeout(function(){ preloader.style.display = 'none'; }, 1000); 
         }
-    }, 500);
+    }, 3000);
 });
 </script>
 
@@ -272,4 +272,5 @@ window.addEventListener('load', function() {
 </script>
 </body>
 </html>
+
 

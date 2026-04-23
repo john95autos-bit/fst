@@ -130,9 +130,9 @@ footer { padding: 40px 0 20px !important; }
 /* ===================== PRELOADER ===================== */
 .ctn-preloader { align-items: center; cursor: default; display: flex; height: 100%; justify-content: center; position: fixed; left: 0; top: 0; width: 100%; z-index: 99999; }
 .ctn-preloader .animation-preloader { z-index: 1000; }
-.ctn-preloader .animation-preloader .txt-loading { font: bold 5em 'Poppins', sans-serif; text-align: center; user-select: none; }
-.ctn-preloader .animation-preloader .txt-loading .letters-loading { color: rgba(255, 255, 255, 0.1); position: relative; margin: 0 4px; }
-.ctn-preloader .animation-preloader .txt-loading .letters-loading:before { animation: letters-loading 4s infinite; content: attr(data-text-preloader); left: 0; opacity: 0; font-family: 'Poppins', sans-serif; position: absolute; top: 0; transform: rotateY(-90deg); }
+.ctn-preloader .animation-preloader .txt-loading { perspective: 800px; transform-style: preserve-3d; font: bold 5em 'Poppins', sans-serif; text-align: center; user-select: none; }
+.ctn-preloader .animation-preloader .txt-loading .letters-loading { transform-style: preserve-3d; display: inline-block; color: rgba(255, 255, 255, 0.1); position: relative; margin: 0 4px; }
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:before { animation: letters-loading 4s infinite; content: attr(data-text-preloader); left: 0; opacity: 0; font-family: 'Poppins', sans-serif; position: absolute; top: 0; transform: rotateX(90deg); }
 .ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(-n+5):before { color: #ef4444; }
 .ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(n+6):before { color: #ffffff; }
 .ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(2):before { animation-delay: 0.2s; }
@@ -150,5 +150,7 @@ footer { padding: 40px 0 20px !important; }
 .ctn-preloader.loaded .animation-preloader { opacity: 0; transition: 0.3s ease-out; }
 .ctn-preloader.loaded .loader-section .bg { width: 0; transition: 0.7s 0.3s cubic-bezier(0.1, 0.1, 0.1, 1); }
 .ctn-preloader.loaded { visibility: hidden; transition: 0.3s 1s ease-out; }
-@keyframes letters-loading { 0%, 75%, 100% { opacity: 0; transform: rotateY(-90deg); } 25%, 50% { opacity: 1; transform: rotateY(0deg); } }
-@media (max-width: 768px) { .ctn-preloader .animation-preloader .txt-loading { font-size: 3em; } }
+@keyframes letters-loading { 0%, 75%, 100% { opacity: 0; transform: rotateX(90deg); } 25%, 50% { opacity: 1; transform: rotateX(0deg); } }
+@media (max-width: 768px) { .ctn-preloader .animation-preloader .txt-loading { perspective: 800px; transform-style: preserve-3d; font-size: 3em; } }
+
+
